@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Player</title>
+	<link rel="stylesheet" type="text/css" href="MusicPlayer.css">
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+    // Function to play audio dynamically
+    function playAudio(audioSrc) {
+        // Check if an audio element already exists
+        let existingAudio = document.querySelector("#audio-player");
+        if (existingAudio) {
+            existingAudio.parentNode.removeChild(existingAudio); // Remove old audio player
+        }
+
+        // Create a new audio element
+        let audio = document.createElement("audio");
+        audio.id = "audio-player";
+        audio.src = audioSrc;
+        audio.controls = true; // Optional: Adds a control bar for pause/play
+        audio.autoplay = true;
+
+         let asideRow = event.target.closest(".aside-row");
+        asideRow.style.paddingBottom = "50px"; // Add space for the audio player
+        asideRow.appendChild(audio);
+    }
+</script>
+	
+</head>
+
+<body>
+	<main>
+		<header id="header-image-container">
+			<div id="#logo">
+				<img id="logo-img" src="Static/logo1.png">
+				<span id="logo-name">India's <br> Studio</span>
+				<h6 id="favourites-name">Trending</h6>
+				<div class="search-bar">
+					<input type="text" name="search" placeholder="Search" class="search-text">
+					<i class="fas fa-microphone" id="mic-icon"></i>
+					<i  class="fas fa-search" id="search-icon"></i>
+				</div>
+				<span><i class="fas fa-bell" id="bell-icon"></i></span>
+				<span id="image-icon"><img src="Static/jackson.jpg"></span>
+			</div>
+		</header>
+	
+
+	
+<!-- Favourite Part -->
+ 	<!-- this is for showing double images at the middle -->
+	
+	<div class="header-image">
+  <div class="image-wrapper">
+   <img src="Static/panga1.jpg" alt="Song">
+   <img src="Static/filhaal.jpg" alt="Song">
+    
+    <img src="Static/yaari.jpg" alt="Song">
+    <!-- Repeat images for continuous effect -->
+    <img src="Static/panga1.jpg" alt="Song">
+   <img src="Static/filhaal.jpg" alt="Song">
+    
+    <img src="Static/yaari.jpg" alt="Song">
+  </div>
+</div>
+
+		
+<!-- Latest Release Section -->
+	
+	<div class="latest-release">
+		<h5 id="heading">Latest Release</h5>
+		<div class="latest-release-container">
+			<div class="latest-release-image">
+				<div id="image">  
+					<div class="latest-release-image-button">
+						<a href=""><i class="fas fa-play"></i></a>
+					</div>
+					<img src="Static/2hearts.png">
+				</div>
+				
+				<div id="name-and-date-container" style="width: 50%; padding-top: 1rem; margin-left: 1px;">
+					<div id="release-data"> 2 Hearts</div><br>
+					<div id="release-data">Jan 15,2020</div>
+				</div>
+				
+				<div id="dots-and-time-container" style="text-align: right;">
+					<div id="release-data">...</div>
+					<div id="release-data">4:40</div>
+				</div>
+			</div>
+			<div class="latest-release-image">
+				<div id="image">  
+					<div class="latest-release-image-button">
+						<a href=""><i class="fas fa-play"></i></a>
+					</div>
+					<img src="Static/ghar.jpg">
+				</div>
+				
+				<div id="name-and-date-container" style="width: 50%; padding-top: 1rem; margin-left: 1px;">
+					<div id="release-data">Chal Ghar Chale</div><br>
+					<div id="release-data">Jan 17,2020</div>
+				</div>
+				
+				<div id="dots-and-time-container" style="text-align: right;">
+					<div id="release-data">...</div>
+					<div id="release-data">5:34</div>
+				</div>
+			</div>
+			<div class="latest-release-image">
+				<div id="image">  
+					<div class="latest-release-image-button">
+						<a href="E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/filhaal.mp3.mp3"><i class="fas fa-play"></i></a> 
+
+						<!--we can make another files for each latest relese consisting of song image and audio player for song-->
+						
+					</div>9
+					<img src="Static/filhaal.jpg">
+				</div>
+				
+				<div id="name-and-date-container" style="width: 50%; padding-top: 1rem; margin-left: 1px;">
+					<div id="release-data">Filhaal</div><br>
+					<div id="release-data">Jan 19,2020</div>
+				</div>
+				
+				<div id="dots-and-time-container" style="text-align: right;">
+					<div id="release-data">...</div>
+					<div id="release-data">4:34</div>
+				</div>
+			</div>
+			<div class="latest-release-image">
+				<div id="image">  
+					<div class="latest-release-image-button">
+						<a href=""><i class="fas fa-play"></i></a>
+					</div>
+					<img src="Static/panga.jpg">
+				</div>
+				
+				<div id="name-and-date-container" style="width: 50%; padding-top: 1rem; margin-left: 1px;">
+					<div id="release-data">Dil Ne Kaha</div><br>
+					<div id="release-data">Jan 18,2020</div>
+				</div>
+				
+				<div id="dots-and-time-container" style="text-align: right;">
+					<div id="release-data">...</div>
+					<div id="release-data">4:00</div>
+				</div>
+			</div>		
+		</div>
+	</div>
+
+<!-- Popular Artist Section -->
+
+	<div class="popular-artist">
+		<h5 id="heading">Popular Artists</h5>
+		<div class="artist-image-container">
+			<div class="popular-artist-image zoom">
+				<img src="Static/KishorKumar.jpg" alt="Song">
+				<span id="artist-name">Kishore Kumar</span>
+			</div>
+				
+			<div class="popular-artist-image zoom">
+				<img src="Static/mohammad rafi.jpg" alt="Song">
+				<span id="artist-name">Mohammad Rafi</span>
+			</div>
+				
+			<div class="popular-artist-image zoom">
+				<img src="Static/LataMangeshkar.jpg" alt="Song">
+				<span id="artist-name">Lata Mangeshkar</span>
+			</div>
+				
+			<div class="popular-artist-image zoom">
+				<img src="Static/nusratfateh.jpg" alt="Song">
+				<span id="artist-name">Nusrat Fateh Ali khan</span>
+			</div>
+				
+			<div class="popular-artist-image zoom">
+				<img src="Static/rahatfateh.jpg" alt="Song">
+				<span id="artist-name">Rahat Fateh Ali Khan</span>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+<!-- Music Staton Section -->
+
+	<section>
+		<div class="music-station">
+			<div id="music-station-icon">
+				<img src="Static/music station.jpg">
+			</div>
+			
+			<div>
+				<img src="Static/love.jpg">
+				<p id="music-class">Love</p>
+			</div>
+				
+			<div>
+				<img src="Static/chill.jpg">
+				<p id="music-class">Chill</p>
+			</div>
+				
+			<div>
+				<img src="Static/retro.jpg">
+				<p id="music-class">Retro</p>
+			</div>
+				
+			<div>
+				<img src="Static/workout.jpg">
+				<p id="music-class">Workout</p>
+			</div>
+				
+			<div>
+				<img src="Static/rock.jpg">
+				<p id="music-class">Rock</p>
+			</div>
+				
+			<div>
+				<img src="Static/pop.jpg">
+				<p id="music-class">Pop</p>
+			</div>
+		</div>
+		
+	</section>
+	
+<!-- Different Song Type -->
+		
+	<div class="songs-type">
+		<div class="songs-image-container">
+			<div class="songs-image">
+				<img src="Static/party.jpg">
+				<p id="song-class">Party</p>
+			</div>
+				
+			<div class="songs-image">
+				<img src="Static/electronic.jpg">
+				<p id="song-class">Electronic</p>
+			</div>
+				
+			<div class="songs-image">
+				<img src="Static/roadtrip.jpg">
+				<p id="song-class">Road Trip</p>
+			</div>
+		</div>
+	</div>
+
+<!-- Latest English Section -->
+		
+	<div class="english-header">
+		<h5 id="english-header-name">Latest English</h5>
+		<div class="english-header-image-container">
+			<div class="english-song-image zoom">
+				<img src="Static/yummy.png" alt="Song">
+				<span id="english-data">Yummy</span>
+				<span id="english-data">Jan 3,2020</span>
+			</div>
+				
+			<div class="english-song-image zoom">
+				<img src="Static/letitrain.png" alt="Song">
+				<span id="english-data">Let It Rain</span>
+				<span id="english-data">Jan 6,2020</span>
+			</div>
+				
+			<div class="english-song-image zoom">
+				<img src="Static/rare.png" alt="Song">
+				<span id="english-data">Rare</span>
+				<span id="english-data">Jan 10,2020</span>
+			</div>
+				
+			<div class="english-song-image zoom">
+				<img src="Static/diamond.png" alt="Song">
+				<span id="english-data">Diamonds</span>
+				<span id="english-data">Jan 11,2020</span>
+			</div>
+				
+			<div class="english-song-image zoom">
+				<img src="Static/furtherup.png" alt="Song">
+				<span id="english-data">Further Up</span>
+				<span id="english-data">Jan 13,2020</span>
+			</div>
+		</div>
+	</div>
+		
+<!-- Latest Hindi Section -->
+	
+	<div class="hindi-header">
+		<h5 id="hindi-header-name">Latest Hindi</h5>
+		<div class="hindi-header-image-container">
+			<div class="hindi-song-image zoom">
+				<img src="Static/Raanjhana.jpg" alt="Song">
+				<span id="hindi-data">Ranjhaana</span>
+				<span id="hindi-data">Dec 27,2019</span>
+			</div>
+				
+			<div class="hindi-song-image zoom">
+				<img src="Static/garmi.jpg" alt="Song">
+				<span id="hindi-data">Garmi</span>
+				<span id="hindi-data">Jan 6,2020</span>
+			</div>
+				
+			<div class="hindi-song-image zoom">
+				<img src="Static/duakaro.jpg" alt="Song">
+				<span id="hindi-data">Dua Karo</span>
+				<span id="hindi-data">Jan 9,2020</span>
+			</div>
+				
+			<div class="hindi-song-image zoom">
+				<img src="Static/ghar.jpg" alt="Song">
+				<span id="hindi-data">Chal Ghar Chale</span>
+				<span id="hindi-data">Jan 11,2020</span>
+			</div>
+				
+			<div class="hindi-song-image zoom">
+				<img src="Static/lahore.jpg" alt="Song">
+				<span id="hindi-data">Lagdi Lahore Di</span>
+				<span id="hindi-data">Jan 14,2020</span>
+			</div>
+		</div>
+	</div>
+			
+<!-- Latest Punjabi Secton -->
+	
+	<div class="punjabi-header">
+		<h5 id="punjabi-header-name">Latest Punjabi</h5>
+		<div class="punjabi-header-image-container">
+			<div class="punjabi-song-image zoom">
+				<img src="Static/yaari.jpg" alt="Song">
+				<span id="punjabi-data">Yaari</span>
+				<span id="punjabi-data">Oct 20,2019</span>
+			</div>
+				
+			<div class="punjabi-song-image zoom">
+				<img src="Static/filhaal.jpg" alt="Song">
+				<span id="punjabi-data">Filhaal</span>
+				<span id="punjabi-data">Oct 26,2019</span>
+			</div>
+				
+			<div class="punjabi-song-image zoom">
+				<img src="Static/jatiyeni.jpg" alt="Song">
+				<span id="punjabi-data">Jaatiye Ni</span>
+				<span id="punjabi-data">Dec 9,2019</span>
+			</div>
+				
+			<div class="punjabi-song-image zoom">
+				<img src="Static/surma.jpg" alt="Song">
+				<span id="punjabi-data">Surma</span>
+				<span id="punjabi-data">Dec 27,2019</span>
+			</div>
+			
+			<div class="punjabi-song-image zoom">
+				<img src="Static/laare.jpg" alt="Song">
+				<span id="punjabi-data">Laare</span>
+				<span id="punjabi-data">Jan 5,2020</span>
+			</div>
+		</div>
+	</div>
+</main>
+
+<!-- Aside Section -->
+
+	<aside>
+		<div class="aside-flex">
+			<div class="queue">
+				<h3 class="queue-title">Queue</h3>
+			</div>
+				
+			<select class="dropdown">
+				<option>Queue</option>
+				<option>Playlists</option>
+				<option>Favourite Songs</option>
+			</select>
+		</div>
+			
+		<div>
+			<div class="aside-row">
+				<p class = "aside-num">01.</p>
+				<img src="Static/filhaal.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/filhaal.mp3.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Filhaal</p>
+						<p>B.Praak</p>
+					</div>
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+			
+			<div class="aside-row">
+				<p class = "aside-num">02.</p>
+				<img src="Static/garmi.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/garmi.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Garmi</p>
+						<p>Badshah</p>
+					</div>
+					
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+			
+			<div class="aside-row">
+				<p class = "aside-num">03.</p>
+				<img src="Static/panga.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/panga.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Dil Ne Kaha</p>
+						<p>Jassie Gill</p>
+					</div>
+					
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+
+			<div class="aside-row">
+				<p class = "aside-num">04.</p>
+				<img src="Static/Raanjhana.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/ranjhana.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Ranjhana</p>
+						<p>Arijit Singh</p>
+					</div>
+					
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+
+			<div class="aside-row">
+				<p class = "aside-num">05.</p>
+				<img src="Static/laare.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/laare.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Laare</p>
+						<p>Maninder Buttar</p>
+					</div>
+					
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+
+			<div class="aside-row">
+				<p class = "aside-num">06.</p>
+				<img src="Static/yaari.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/filhaal.mp3.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Yaari</p>
+						<p>Nick</p>
+					</div>
+					
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+
+			<div class="aside-row">
+				<p class = "aside-num">07.</p>
+				<img src="Static/surma.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/Surma.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Surma</p>
+						<p>Diljit Singh</p>
+					</div>
+					
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+
+			<div class="aside-row">
+				<p class = "aside-num">08.</p>
+				<img src="Static/lahore.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/lahore.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Lagdi Lahore Di</p>
+						<p>Guru Randhawa</p>
+					</div>
+					
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+
+			<div class="aside-row">
+				<p class = "aside-num">09.</p>
+				<img src="Static/duakaro.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/duakaro.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Dua Karo</p>
+						<p>Arijit Singh</p>
+					</div>
+					
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+
+			<div class="aside-row">
+				<p class = "aside-num">10.</p>
+				<img src="Static/filhaal.jpg"  onclick="playAudio('E:/coding/RWD/Project/Music-Player-Static-Website-master/audio/filhaal.mp3.mp3')">
+					<div class="name-group">
+						<p style="font-weight: 700; font-size: 1.2rem;">Filhaal</p>
+						<p>B.Praak</p>
+					</div>
+					
+					<div class="icon">
+						<i class="far fa-heart"></i>
+					</div>
+			</div>
+		</div>
+	</aside>
+
+<!-- Footer -->
+		
+	<footer>
+		<!-- Ist Section -->
+		<div class="description">
+			<img src="Static/filhaal.jpg">
+				<div class="desc">
+					<p class="desc-name">Filhaal</p>
+					<p class="desc-artist">B.Praak</p>
+				</div>
+				<i class=" far fa-heart"></i>
+				<i class="fas fa-ban"></i>
+		</div>
+		<!-- 2nd Section -->
+		<div class="media-player">
+			<div class="media-controls">
+				<i class="fas fa-random"></i>
+				<i class="fas fa-step-backward"></i>
+				<i class="fas fa-pause-circle play-pause"></i>
+				<i class="fas fa-step-forward"></i>
+				<i class="fas fa-retweet"></i>
+			</div>
+				
+			<div class="progress">
+				<div class="progress-bar">
+					<i class="fas fa-circle"></i>
+				</div>
+			</div>
+		</div>
+
+		<!-- 3rd Section -->
+		<div class="volume-section">
+			<i class="material-icons rhs-icon">playlist</i>
+			<i class="material-icons rhs-icon">speaker</i>
+			<i class="material-icons rhs-icon">volume_up</i>
+			<div class="progress-small">
+				<div class="progress-bar-small">
+					<i class="fas fa-circle"></i>
+				</div>
+			</div>
+				<i class="fas fa-expand-arrows-alt"></i>
+		</div>
+	</footer>
+	</body>
+	</html>

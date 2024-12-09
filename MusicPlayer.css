@@ -1,0 +1,792 @@
+html {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#0c1027, #0c1027);
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+}
+
+/*Header Section*/
+
+#header-image-container {
+  position: fixed;
+  background-color: linear-gradient(#0c1027, #0c1027);
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  z-index: 15;
+}
+
+#logo {
+  display: inline-block;
+  width: 19%;
+}
+
+#logo-img {
+  margin-left: 7%;
+  max-width: 10%;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+#logo-name {
+  display: inline-block;
+  color: blanchedalmond;
+  font-weight: 600;
+  font-family: sans-serif;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+#favourites-name {
+  color: whitesmoke;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-left: 10%;
+  display: inline-block;
+  margin-top: 6%;
+}
+
+#search-icon {
+  height: 10px;
+  width: 40px;
+  border-radius: 50%;
+  padding: 12px 12px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2f3640;
+  color: blanchedalmond;
+  text-decoration: none;
+}
+
+#bell-icon {
+  position: absolute;
+  top: 36%;
+  left: 82%;
+  width: 40px;
+  height: 40px;
+  color: blanchedalmond;
+}
+#bell-icon:hover {
+  color: yellow;
+  cursor: pointer;
+}
+#mic-icon {
+  top: 30%;
+  left: 105%;
+  color: white;
+  position: absolute;
+}
+
+#image-icon img {
+  position: absolute;
+  top: 8%;
+  left: 90%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/*Innovation: Search bar will be open after hovering on it*/
+
+.search-bar {
+  position: absolute;
+  margin-top: -4%;
+  left: 65%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  background: #2f3640;
+}
+
+.search-bar:hover > .search-text {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.searchbar:hover > .search-btn {
+  background: white;
+}
+
+.search-icon:hover {
+  color: black;
+}
+
+.search-text {
+  border: none;
+  background: none;
+  outline: none;
+  float: right;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+/* Favourite Part */
+
+.header-image {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; /* Ensure images stay in one row */
+  margin-top: 80px;
+  margin-left: 40px;
+  margin-right: 50%;
+  height: 300px;
+  width: 85%;
+  overflow: hidden; /* Hide the scrolling part */
+  position: relative;
+}
+
+@keyframes rolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: row;
+  animation: rolling 50s linear infinite; /* Continuous animation */
+}
+
+.image-wrapper img {
+  width 40%; /* Adjust the size of the images */
+  height: 100%;
+  margin-right: 10px;
+  transition: transform 0.2s ease; /* For smooth zoom on hover */
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.1); /* Slight zoom-in effect on hover */
+}
+
+
+
+/*Innovation: After hovering each section images will zoom*/
+
+.zoom {
+  transition: transform 0.2s;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+  border: 1px solid black;
+  box-shadow: 0px 5px 5px 0px grey;
+  background: linear-gradient(seagreen, orangered);
+}
+
+/*Main Section*/
+/*Latest Release Section*/
+
+main {
+  display: inline-block;
+  width: 70%;
+  overflow-y: scroll;
+  height: 90vh;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+
+#heading {
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+}
+
+.latest-release {
+  margin-left: 5%;
+}
+
+.latest-release-container {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.latest-release-container #image {
+  width: 120px;
+  height: 100px;
+  margin: 5px;
+  position: relative;
+}
+
+.latest-release-image {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+#image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10%;
+}
+
+#image i {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#image:hover i {
+  height: 100%;
+  width: 100%;
+  visibility: visible;
+  color: red;
+  font-size: 1.2rem;
+}
+
+#release-data {
+  color: whitesmoke;
+  margin-left: 2%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: sans-serif;
+}
+
+/*Popular Artist Section*/
+
+.popular-artist {
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.popular-artist-image {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.artist-image-container img {
+  width: 120px;
+  height: 80px;
+  border-radius: 80%;
+  margin: 15px;
+}
+
+#artist-name {
+  color: whitesmoke;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+/*Music Station Section*/
+
+section {
+  width: 75%;
+  margin-left: 5%;
+  margin-top: 2%;
+  padding: 8px;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #12193e;
+}
+
+#music-station-icon {
+  align-self: center;
+}
+
+#music-station-icon img {
+  width: 100px;
+  height: 80px;
+  margin-top: -2px;
+}
+
+.music-station {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.music-station img {
+  width: 90px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 7px;
+  margin-left: 8%;
+  margin-top: 18px;
+}
+
+#music-class {
+  margin-top: -2%;
+  text-align: center;
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/*Different Songs Type Section*/
+
+.songs-type {
+  margin-left: 10%;
+  
+  margin-bottom: 50px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+}
+
+.songs-image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.songs-image-container img {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 10%;
+}
+
+
+#song-class {
+  text-align: center;
+  margin-top: -45%;
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/*Latest English Section*/
+
+.english-header {
+  margin-left: 5%;
+}
+
+#english-header-name {
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+}
+
+.english-header-image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.english-header-image-container img {
+  width: 120px;
+  height: 80px;
+  margin: 15px;
+  border-radius: 10% 10% 10% 10%;
+}
+
+.english-song-image {
+  display: flex;
+  flex-direction: column;
+}
+
+#english-data {
+  color: whitesmoke;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/*Latest Hindi Section*/
+
+.hindi-header {
+  margin-left: 5%;
+}
+
+#hindi-header-name {
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+}
+
+.hindi-header-image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.hindi-header-image-container img {
+  width: 120px;
+  height: 80px;
+  margin: 15px;
+  border-radius: 10% 10% 10% 10%;
+}
+
+.hindi-song-image {
+  display: flex;
+  flex-direction: column;
+}
+
+#hindi-data {
+  color: whitesmoke;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/*Latest punjabi Section*/
+
+.punjabi-header {
+  margin-left: 5%;
+  height: 200px;
+}
+
+#punjabi-header-name {
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+}
+
+.punjabi-header-image-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.punjabi-header-image-container img {
+  width: 120px;
+  height: 80px;
+  margin: 15px;
+  border-radius: 10% 10% 10% 10%;
+}
+
+.punjabi-song-image {
+  display: flex;
+  flex-direction: column;
+}
+
+#punjabi-data {
+  color: whitesmoke;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/*Aside Section*/
+
+aside {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  overflow-y: scroll;
+  height: 65vh;
+  margin-top: 120px;
+  margin-left: -7%;
+}
+
+.queue {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.aside-flex {
+  display: flex;
+  border-top: 4px solid black;
+}
+
+.queue-title {
+  color: whitesmoke;
+  font-family: sans-serif;
+  font-weight: 700;
+  margin-top: 2%;
+  align-self: center;
+}
+
+.dropdown {
+  position: relative;
+  background-color: transparent;
+  margin-left: 55%;
+  width: 40%;
+  align-self: center;
+  padding: 3px 5px 0 5px;
+  border: none;
+  font-weight: 700;
+  font-size: large;
+  color: teal;
+}
+
+.dropdown:focus option:first-of-type {
+  display: none;
+}
+
+.dropdown option {
+  background-color: white;
+  margin: 5px;
+  padding: 5px;
+  text-decoration: underline;
+}
+
+aside::-webkit-scrollbar {
+  display: none;
+}
+
+.aside-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.aside-row p {
+  margin: 0;
+  padding-bottom: 5px;
+  color: whitesmoke;
+}
+
+.aside-row img {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 10%;
+}
+
+.icon {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 25%;
+  color: white;
+}
+
+.name-group {
+  display: inline-block;
+  margin: 0;
+  width: 30%;
+}
+
+.aside-row .aside-num {
+  width: 10%;
+  align-self: center;
+}
+
+/* Footer Part */
+
+footer {
+  height: 60px;
+  background-color: #282828;
+  position: fixed;
+  bottom: 0;
+  width: 60%;
+  padding: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+  margin-left: 20%;
+}
+
+.description {
+  display: flex;
+  justify-content: flex-start;
+  width: 30%;
+}
+
+.description i {
+  margin-top: 20px;
+  padding-right: 10px;
+  color: white;
+}
+
+.description img {
+  width: 70px;
+  height: 60px;
+  margin-top: 1px;
+  margin-right: 5px;
+  margin-left: -2%;
+}
+
+.desc {
+  margin-right: 20px;
+  margin-left: 2px;
+}
+
+.desc-name {
+  margin: 3px;
+  padding-top: 6px;
+  color: white;
+}
+
+.desc-artist {
+  margin: 3px;
+  color: white;
+}
+
+.media-player {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  margin-top: 5px;
+  justify-content: center;
+  width: 50%;
+  margin-left: 30px;
+}
+
+.media-controls {
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.media-controls i {
+  font-size: 20px;
+  margin: 15px;
+}
+
+.progress {
+  z-index: 1;
+  align-self: center;
+  margin-top: 5px;
+  background-color: white;
+  width: 80%;
+  height: 5px;
+}
+
+.progress-bar {
+  height: 5px;
+  z-index: 5;
+  width: 60%;
+  background-color: yellow;
+}
+
+.progress-bar i {
+  position: relative;
+  bottom: 6px;
+  left: 160px;
+}
+
+.volume-section {
+  display: flex;
+  margin-top: 18px;
+  width: 40%;
+  margin-left: -90px;
+}
+
+.volume-section i {
+  margin: 6px;
+  color: white;
+}
+
+.progress-small {
+  margin-top: 18px;
+  width: 450px;
+  height: 5px;
+  background-color: white;
+  z-index: 1;
+}
+
+.progress-bar-small {
+  height: 5px;
+  width: 50%;
+  z-index: 5;
+  background-color: yellow;
+}
+
+.progress-bar-small i {
+  position: relative;
+  bottom: 8px;
+  left: 30px;
+  font-size: 12px;
+}
+
+.fa-expand-arrows-alt {
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  aside {
+    width: 0px;
+    overflow: hidden;
+  }
+  footer {
+    display: none;
+  }
+
+  .search-bar {
+    margin-top: -6%;
+    margin-left: 0%;
+  }
+  .search-bar:hover > .search-text {
+    width: 130px;
+    padding: 0 2px;
+  }
+
+  #mic-icon {
+    margin-left: 12%;
+  }
+  #image-icon img {
+    display: none;
+  }
+  #bell-icon {
+    margin-left: 12%;
+    margin-top: 0%;
+  }
+  .fa-bell:hover {
+    cursor: pointer;
+    color: yellow;
+  }
+  #search-icon {
+    height: 10px;
+    width: 20px;
+  }
+  #favourites-name {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+  }
+  #logo-img {
+    width: 10%;
+    overflow: hidden;
+    margin-top: -20%;
+  }
+  #logo-name {
+    margin-top: -20%;
+  }
+  .songs-image-container img {
+    padding: 8px;
+  }
+}
